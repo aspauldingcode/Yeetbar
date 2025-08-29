@@ -3,6 +3,8 @@
 Yeets your macOS titlebar.
 WIP
 
+![Preview](preview.png)
+
 Compilation (Requires Ammonia Injector):
 
 ```
