@@ -109,6 +109,58 @@ finder:
 		-e 'end tell'
 	@echo "📁 Finder launched with Yeetbar and opened home directory. Check Console.app for logs."
 
+# Test with Chess
+.PHONY: chess
+chess:
+	@echo "♟️ Testing Yeetbar with Chess..."
+	@pkill -f Chess || true
+	@sleep 1
+	@DYLD_INSERT_LIBRARIES=/var/ammonia/core/tweaks/Yeetbar.dylib open -a Chess
+	@sleep 3
+	@osascript -e 'tell application "Chess"' \
+		-e 'activate' \
+		-e 'end tell'
+	@echo "♟️ Chess launched with Yeetbar. Check Console.app for logs."
+
+# Test with Calculator
+.PHONY: calculator
+calculator:
+	@echo "🧮 Testing Yeetbar with Calculator..."
+	@pkill -f Calculator || true
+	@sleep 1
+	@DYLD_INSERT_LIBRARIES=/var/ammonia/core/tweaks/Yeetbar.dylib open -a Calculator
+	@sleep 3
+	@osascript -e 'tell application "Calculator"' \
+		-e 'activate' \
+		-e 'end tell'
+	@echo "🧮 Calculator launched with Yeetbar. Check Console.app for logs."
+
+# Test with Grapher
+.PHONY: graph
+graph:
+	@echo "📊 Testing Yeetbar with Grapher..."
+	@pkill -f Grapher || true
+	@sleep 1
+	@DYLD_INSERT_LIBRARIES=/var/ammonia/core/tweaks/Yeetbar.dylib open -a Grapher
+	@sleep 3
+	@osascript -e 'tell application "Grapher"' \
+		-e 'activate' \
+		-e 'end tell'
+	@echo "📊 Grapher launched with Yeetbar. Check Console.app for logs."
+
+# Test with CrystalFetch
+.PHONY: crystalfetch
+crystalfetch:
+	@echo "💎 Testing Yeetbar with CrystalFetch..."
+	@pkill -f CrystalFetch || true
+	@sleep 1
+	@DYLD_INSERT_LIBRARIES=/var/ammonia/core/tweaks/Yeetbar.dylib open -a CrystalFetch
+	@sleep 3
+	@osascript -e 'tell application "CrystalFetch"' \
+		-e 'activate' \
+		-e 'end tell'
+	@echo "💎 CrystalFetch launched with Yeetbar. Check Console.app for logs."
+
 # Uninstall the tweak from system
 .PHONY: uninstall remove
 uninstall remove:
@@ -158,6 +210,10 @@ help:
 	@echo -e "  $(GREEN)test$(RESET)       - Test injection with CrystalFetch application"
 	@echo -e "  $(GREEN)textedit$(RESET)   - Test with TextEdit application"
 	@echo -e "  $(GREEN)finder$(RESET)     - Test with Finder application"
+	@echo -e "  $(GREEN)chess$(RESET)      - Test with Chess application"
+	@echo -e "  $(GREEN)calculator$(RESET) - Test with Calculator application"
+	@echo -e "  $(GREEN)graph$(RESET)      - Test with Grapher application"
+	@echo -e "  $(GREEN)crystalfetch$(RESET) - Test with CrystalFetch application"
 	@echo -e "  $(GREEN)install$(RESET)    - Install tweak to Ammonia system (/var/ammonia/core/tweaks)"
 	@echo -e "  $(GREEN)uninstall$(RESET)  - Uninstall tweak from system (alias: remove)"
 	@echo -e "  $(GREEN)logs$(RESET)       - Show Console.app logs filtered for 'Yeetbar' entries"
