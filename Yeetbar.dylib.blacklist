@@ -1,0 +1,60 @@
+# DisableTitlebars Blacklist
+# Applications listed here will be excluded from titlebar modification
+# Format: one bundle identifier per line
+
+# System applications that should not be modified
+com.apple.loginwindow
+com.apple.WindowServer
+com.apple.dock
+com.apple.Spotlight
+com.apple.notificationcenterui
+com.apple.controlcenter
+com.apple.systemuiserver
+com.apple.finder
+com.apple.screensaver.engine
+com.apple.ScreenSaver.Engine
+com.apple.screensaver
+com.apple.ScreenSaver
+
+# Security and system utilities
+com.apple.SecurityAgent
+com.apple.authorizationhost
+com.apple.CoreAuthUI
+com.apple.loginitems
+com.apple.UserNotificationCenter
+
+# Installer and updater applications
+com.apple.installer
+com.apple.SoftwareUpdate
+com.apple.InstallAssistant
+com.apple.MobileSoftwareUpdate
+
+# Development tools that might have issues
+com.apple.dt.Xcode
+com.microsoft.VSCode
+com.github.atom
+com.sublimetext.4
+
+# Virtual machines and emulators
+com.vmware.fusion
+com.parallels.desktop
+com.utmapp.UTM
+com.docker.docker
+
+# Screen recording and streaming
+com.telestream.screenflow9
+com.techsmith.camtasia2021
+com.obsproject.obs-studio
+
+# System preferences and configuration
+com.apple.systempreferences
+com.apple.preference
+com.apple.PreferencePanes
+
+# Terminal applications (might interfere with display)
+com.apple.Terminal
+com.googlecode.iterm2
+com.github.wez.wezterm
+
+# Add more applications as needed
+# Format: com.company.appname
