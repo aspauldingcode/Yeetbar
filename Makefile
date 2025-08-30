@@ -161,6 +161,19 @@ crystalfetch:
 		-e 'end tell'
 	@echo "💎 CrystalFetch launched with Yeetbar. Check Console.app for logs."
 
+# Test with LibreOffice
+.PHONY: libreoffice
+libreoffice:
+	@echo "📄 Testing Yeetbar with LibreOffice..."
+	@pkill -f LibreOffice || true
+	@sleep 1
+	@DYLD_INSERT_LIBRARIES=/var/ammonia/core/tweaks/Yeetbar.dylib open -a LibreOffice
+	@sleep 3
+	@osascript -e 'tell application "LibreOffice"' \
+		-e 'activate' \
+		-e 'end tell'
+	@echo "📄 LibreOffice launched with Yeetbar. Check Console.app for logs."
+
 # Uninstall the tweak from system
 .PHONY: uninstall remove
 uninstall remove:
@@ -214,6 +227,7 @@ help:
 	@echo -e "  $(GREEN)calculator$(RESET) - Test with Calculator application"
 	@echo -e "  $(GREEN)graph$(RESET)      - Test with Grapher application"
 	@echo -e "  $(GREEN)crystalfetch$(RESET) - Test with CrystalFetch application"
+	@echo -e "  $(GREEN)libreoffice$(RESET) - Test with LibreOffice application"
 	@echo -e "  $(GREEN)install$(RESET)    - Install tweak to Ammonia system (/var/ammonia/core/tweaks)"
 	@echo -e "  $(GREEN)uninstall$(RESET)  - Uninstall tweak from system (alias: remove)"
 	@echo -e "  $(GREEN)logs$(RESET)       - Show Console.app logs filtered for 'Yeetbar' entries"
